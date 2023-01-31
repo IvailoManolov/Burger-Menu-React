@@ -7,7 +7,8 @@ body{
     min-height: 100vh;
   }
 
-.menu-button{
+.menu-button,
+.menu-button-open{
     position: relative;
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@ body{
     width: 80px;
     height: 80px;
     cursor: pointer;
-    transition: all .5s ease-in-out;
+    transition: all 1s ease-in-out;
     border: 3px solid #fff;
 }
 
@@ -25,7 +26,7 @@ body{
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255,101,47,.2);
-    transition: all .5 ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .menu-button-burger::before,
@@ -41,7 +42,7 @@ body{
     background:#fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255,101,47,.2);
-    transition: all .5s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .menu-button-burger::before{
@@ -49,4 +50,19 @@ body{
 }
 .menu-button-burger::after{
     transform: translateY(16px);
+}
+
+/*Animating*/
+
+.menu-button-open .menu-button-burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.menu-button-open .menu-button-burger::before{
+    transform: rotate(45deg) translate(35px,-35px);
+}
+
+.menu-button-open .menu-button-burger::after{
+    transform: rotate(-45deg) translate(35px,35px);
 }
